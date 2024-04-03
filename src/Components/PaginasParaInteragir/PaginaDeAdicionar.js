@@ -35,6 +35,7 @@ function PaginaDeAdicionar({desaparecer}) {
         }
         desaparecer()
         AdicionarProdutos(produto)
+        window.location.reload()
     }
     return(
         <>
