@@ -1,6 +1,7 @@
 import "./lista.css"
 
 function Minhalista(props) {
+  let data = props.data
   return (
     <>
       <tbody>
@@ -9,10 +10,10 @@ function Minhalista(props) {
           <td>{props.nome}</td>
           <td>{props.valor}</td>
           <td>{props.qtd}</td>
-          <td>{props.data}</td>
+          <td>{data.substring(0, 10)}</td>
         </tr>
       </tbody>
-      </>
+    </>
   );
 }
 

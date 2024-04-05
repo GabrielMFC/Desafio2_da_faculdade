@@ -3,7 +3,7 @@ import "./paginaDeInteracao.css"
 import AdicionarProdutos from "../../Services/adicionar"
 import Swal from "sweetalert2"
 
-function PaginaDeAdicionar({desaparecer}) {
+function PaginaDeAdicionar() {
     const [nome, setnome] = useState()
     const [valor, setvalor] = useState()
     const [qtd, setqtd] = useState()
@@ -33,22 +33,21 @@ function PaginaDeAdicionar({desaparecer}) {
             "quantidadeEstoque": qtd,
             "dataCadastro": new Date()
         }
-        desaparecer()
         AdicionarProdutos(produto)
         window.location.reload()
     }
     return(
         <>
         <div id="centralizarfelx">
-            <div id="pagina-de-add">
-            <h2 id="titulo">Adicionar</h2>
+            <div className="pagina">
+            <h2 className="titulo" id="titulo-de-adicionar">Adicionar</h2>
             <h3>Nome:</h3>
             <input onChange={obterNome} placeholder="Digite o nome..."></input>
             <h3>Valor:</h3>
             <input onChange={obtervalor}  placeholder="Digite o valor..."></input>
             <h3>Quantidade:</h3>
             <input onChange={obterqtd}  placeholder="Digite a quantidade..."></input>
-            <button onClick={() => {VazarDados(); desaparecer(true)}} id="btn-de-confirmar">Confirmar</button>
+            <button onClick={() => {VazarDados()}} className="btn-de-confirmar" id="btn-de-adicionar">Confirmar</button>
             </div>
         </div>
         </>

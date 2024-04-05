@@ -12,7 +12,7 @@
     justify-content: center;
     align-items: center;
 }
-#pagina-de-add{
+.pagina{
     position: absolute;
     display: flex;
     justify-content: center;
@@ -23,9 +23,14 @@
     height: 70vh;
     border-radius: 0em 2em 2em 2em;
 }
-#titulo{
+#pagina-de-editar{
+    height: 73vh;
+}
+#pagina-de-remover{
+    height: 50vh;
+}
+.titulo{
     position: absolute;
-    background-color: #50C878;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -33,6 +38,15 @@
     font-size: 2em;
     top: 0%;
     border-radius: 0em 2em 0em 0em;
+}
+#titulo-de-adicionar{
+    background-color: #50C878;
+}
+#titulo-de-editar{
+    background-color: blue;
+}
+#titulo-de-remover{
+    background-color: red;
 }
 h3{
     position: relative;
@@ -43,22 +57,48 @@ input{
     height: 3vh;
     margin-top: 0%;
 }
-#btn-de-confirmar{
+.btn-de-confirmar{
     color: white;
     background-color: black;
     cursor: pointer;
     border: solid 3px white;
     font-size: 2.5vh;
     margin-top: 10%;
+    border-radius: 2em;
+    padding: 1.5%;
 }
-#btn-de-confirmar:hover{
-    animation: animacaoDoBotao 0.5s linear;
+#btn-de-adicionar:hover{
+    animation: animacaoDoBotaoAdicionar 1s linear;
     animation-fill-mode: forwards;
+    font-weight: bold;
 }
-@keyframes animacaoDoBotao {
+#btn-de-editar:hover{
+    animation: animacaoDoBotaoEditar 1s linear;
+    animation-fill-mode: forwards;
+    font-weight: bold;
+}
+#btn-de-remover:hover{
+    animation: animacaoDoBotaoRemover 1s linear;
+    animation-fill-mode: forwards;
+    font-weight: bold;
+}
+@keyframes animacaoDoBotaoAdicionar {
     100%{
         box-shadow: 0px 0px 30px 0px lightgreen;
         background-color: #50C878;
+        font-weight: bold;
+    }
+}
+@keyframes animacaoDoBotaoEditar {
+    100%{
+        box-shadow: 0px 0px 30px 0px blue;
+        background-color: blue;
+    }
+}
+@keyframes animacaoDoBotaoRemover {
+    100%{
+        box-shadow: 0px 0px 30px 0px red;
+        background-color: red;
         font-weight: bold;
     }
 }

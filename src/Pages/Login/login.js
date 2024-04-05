@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "./login.css"
 import Cadastro from "../../Services/cadastro"
-import {useNavigate} from "react-router-dom"
+import {useNavigate, useHistory} from "react-router-dom"
 import Swal from "sweetalert2"
 
 function Login() {
@@ -28,7 +28,7 @@ function Login() {
         }
         Cadastro(email, senha)
         .then(() => {
-            navigate("/Home")
+            navigate("/Home", {replace: true})
         })
         .catch(() => {
             Swal.fire({
@@ -45,7 +45,7 @@ function Login() {
         <>
     <div className="centralizarflex">
     <div id="teladelogin">
-        <h1 id="titulo">Login</h1>
+        <h1 id="titulo-login">Login</h1>
         <input  onChange={obteremail} type="email" placeholder="Digite seu e-mail..." id="email" email={email}/>
         <input onChange={obtersenha} type="password" placeholder="Digite sua senha..." id="senha" senha={senha}/>
         <button id="botaodeentrar" onClick={verificar}>Entrar</button>
