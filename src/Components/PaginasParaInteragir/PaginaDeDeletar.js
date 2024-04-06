@@ -1,6 +1,7 @@
 import { useState } from "react"
 import "./paginaDeInteracao.css"
 import remover from "../../Services/remover"
+import Swal from "sweetalert2"
 
 function PaginaDeDeletar() {
     const [numero, setnumero] = useState()
@@ -10,7 +11,12 @@ function PaginaDeDeletar() {
     }
     const excluir = () => {
         if(!numero){
-            alert("Digite o número do item que deseja ser removido")
+            Swal.fire({
+                popup:"background-color: blue;",
+                icon: "error",
+                title: "Oops...",
+                text: "Preencha o número"
+              });
             return
         }
         let id = numero - 1

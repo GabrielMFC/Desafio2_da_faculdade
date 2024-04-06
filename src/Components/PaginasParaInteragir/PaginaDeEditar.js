@@ -2,6 +2,7 @@ import { useState } from "react"
 import "./paginaDeInteracao.css"
 import editar from "../../Services/editar"
 import lerProdutos from "../../Services/lerProdutos"
+import Swal from "sweetalert2"
 
 function PaginaDeEditar() {
     const [numero, setnumero] = useState()
@@ -24,7 +25,12 @@ function PaginaDeEditar() {
     const VazarDados = () => {
         lerProdutos().then(response => {
         if(!numero){
-            alert("Digite o número do item que deseja ser editado")
+            Swal.fire({
+                popup:"background-color: blue;",
+                icon: "error",
+                title: "Oops...",
+                text: "Preencha o número"
+              });
             return
         }
         let id = numero - 1
